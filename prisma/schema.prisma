@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String   @id @default(uuid())
+  email    String   @unique
+  provider Provider
+  streams Stream[]
+  upvotes Upvote[]
+
+}
+
+model Stream {
+  id     String @id @default(uuid())
+  type   StreamType
+  active Boolean @default(true)
+  upvotes Upvote[]
+  userID String
+  user   User @relation(fields: [userID], references: [id])
+}
+model Upvote{
+  id       String @id @default(uuid())
+  streamID String
+  userID   String
+  user     User   @relation(fields: [userID], references: [id])
+  stream   Stream @relation(fields: [streamID], references: [id])
+  @@unique([streamID, userID])
+}
+
+enum Role {
+  Streamer
+  EndUser
+}
+
+enum Provider {
+  Google
+}
+enum StreamType{
+  Spotify
+  Youtube
+}
