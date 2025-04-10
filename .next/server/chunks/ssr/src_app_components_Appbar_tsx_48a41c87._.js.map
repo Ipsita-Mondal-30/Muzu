@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/ipsitamondal/Documents/projects/muzu/Muzu/src/app/components/Appbar.tsx"],"sourcesContent":["\"use client\";\nimport { signIn, signOut, useSession } from \"next-auth/react\";\n\nexport default function Appbar() {\n    const session=useSession();\n    return <div>\n    <div className='flex justify-betwen'  >\n        Muzi\n    </div>\n    <div>\n        {session.data?.user?.name && <button className=\"m-2 p-2 bg-blue-400\" onClick={()=> signOut()}>Logout</button>}\n        {!session.data?.user?.name && <button className=\"m-2 p-2 bg-blue-400\" onClick={()=> signIn()}>Signin</button>}\n    </div>\n    </div>\n}"],"names":[],"mappings":";;;;AACA;AADA;;;AAGe,SAAS;IACpB,MAAM,UAAQ,CAAA,GAAA,8IAAA,CAAA,aAAU,AAAD;IACvB,qBAAO,8OAAC;;0BACR,8OAAC;gBAAI,WAAU;0BAAwB;;;;;;0BAGvC,8OAAC;;oBACI,QAAQ,IAAI,EAAE,MAAM,sBAAQ,8OAAC;wBAAO,WAAU;wBAAsB,SAAS,IAAK,CAAA,GAAA,8IAAA,CAAA,UAAO,AAAD;kCAAK;;;;;;oBAC7F,CAAC,QAAQ,IAAI,EAAE,MAAM,sBAAQ,8OAAC;wBAAO,WAAU;wBAAsB,SAAS,IAAK,CAAA,GAAA,8IAAA,CAAA,SAAM,AAAD;kCAAK;;;;;;;;;;;;;;;;;;AAGtG","debugId":null}}]
+}
