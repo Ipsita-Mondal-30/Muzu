@@ -1,3 +1,8 @@
 {
-  "/api/streams/route": "app/api/streams/route.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/api/streams/my/route": "app/api/streams/my/route.js",
+  "/api/streams/upvote/route": "app/api/streams/upvote/route.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
 }

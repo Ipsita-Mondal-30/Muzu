@@ -30,6 +30,9 @@ export async function POST(request: Request) {
                 userID: user?.id ?? "",
                 streamID:data.StreamId,
             }
+        });
+        return NextResponse.json({
+            message:"Upvoted successfully",
         })
     } catch(e){
         return NextResponse.json(
